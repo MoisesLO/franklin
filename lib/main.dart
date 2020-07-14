@@ -32,10 +32,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final controller = ScrollController();
+  double offset = 0;
+
   @override
+  void initState(){
+
+  }
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Hola mundo'),
+    return Scaffold(
+      body: SingleChildScrollView(
+        controller: controller,
+        child: Column(
+          children: <Widget>[
+          ],
+        ),
+      ),
     );
   }
 }
