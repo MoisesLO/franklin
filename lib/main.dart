@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:franklin/constant.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -11,43 +8,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: kBackgroundColor,
-        fontFamily: "Poppins",
-        primarySwatch: Colors.blue,
-        textTheme: TextTheme(
-          body1: TextStyle(color: kBodyTextColor)
-        )
-      ),
-      home: HomeScreen(),
+      title: 'Consultorio Dental',
+      home: MyPage(),
     );
   }
 }
 
-class HomeScreen extends StatefulWidget {
+class MyPage extends StatelessWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  final controller = ScrollController();
-  double offset = 0;
-
-  @override
-  void initState(){
-
-  }
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        controller: controller,
-        child: Column(
-          children: <Widget>[
-          ],
-        ),
-      ),
-    );
+        body: CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          pinned: true,
+          expandedHeight: 200,
+          flexibleSpace: Image.asset(
+            "assets/images/consultorio2.jpg",
+            fit: BoxFit.cover,
+          ),
+        )
+      ],
+    ));
   }
 }
-
