@@ -18,16 +18,25 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: CustomScrollView(
-      slivers: <Widget>[
+      body: CustomScrollView(
+        slivers: <Widget>[
         SliverAppBar(
-          pinned: true,
-          expandedHeight: 200,
-          flexibleSpace: Image.asset(
-            "assets/images/consultorio2.jpg",
-            fit: BoxFit.cover,
-          ),
-        )
+        pinned: true,
+        expandedHeight: 200,
+        flexibleSpace: Image.asset(
+          "assets/images/consultorio2.jpg",
+          fit: BoxFit.cover,
+        ),
+      ),
+      SliverList(
+        delegate: SliverChildListDelegate(
+          [
+            Container(color: Colors.red, height: 150.0),
+            Container(color: Colors.purple, height: 150.0),
+            Container(color: Colors.green, height: 150.0),
+          ],
+        ),
+      )
       ],
     ));
   }
