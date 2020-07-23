@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:franklin/my_clipper.dart';
-import 'package:franklin/card.dart';
+import 'package:franklin/OptionsCard.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,104 +43,30 @@ class MyHomePage extends StatelessWidget {
                         color: Colors.black54),
                   ),
                 ),
-                ListTile(
-                  leading: SizedBox(
-                      height: 200.0,
-                      width: 90.0, // fixed width and height
-                      child: Image.asset(
-                        "assets/images/about.jpg",
-                        fit: BoxFit.fitWidth,
-                      )),
-                  title: Text(
-                    'Consultorio',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.8,
-                        color: Colors.black54),
-                  ),
-                  subtitle: Text('Fotos del consultorio y salas'),
-                ),
-                Divider(),
-                ListTile(
-                  leading: SizedBox(
-                      height: 200.0,
-                      width: 90.0, // fixed width and height
-                      child: Image.asset(
-                        "assets/images/cita.png",
-                        fit: BoxFit.fitWidth,
-                      )),
-                  title: Text(
-                    'Pide Una Cita',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.8,
-                        color: Colors.black54),
-                  ),
-                  subtitle: Text('Contacta con nuestra atencion al cliente'),
-                ),
-                Divider(),
-                ListTile(
-                  leading: SizedBox(
-                      height: 200.0,
-                      width: 90.0, // fixed width and height
-                      child: Image.asset(
-                        "assets/images/mision.png",
-                        fit: BoxFit.fitWidth,
-                      )),
-                  title: Text('Nuestra Misio y Vision',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.8,
-                      color: Colors.black54),),
-                  subtitle:
-                      Text('Informacion de institucional del Consultorio'),
-                ),
-                Divider(),
-                ListTile(
-                  leading: SizedBox(
-                      height: 200.0,
-                      width: 90.0, // fixed width and height
-                      child: Image.asset(
-                        "assets/images/medical.png",
-                        fit: BoxFit.fitWidth,
-                      )),
-                  title: Text('Staft de Doctores',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.8,
-                      color: Colors.black54),),
-                  subtitle: Text(
-                      'Conoce nuestro staft de doctores, que te atenderemos.'),
-                ),
-                Divider(),
-                ListTile(
-                  leading: SizedBox(
-                      height: 230.0,
-                      width: 90.0, // fixed width and height
-                      child: Image.asset(
-                        "assets/images/tratamientos2.png",
-                        fit: BoxFit.fitWidth,
-                      )),
-                  title: Text('Tratamientos',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.8,
-                      color: Colors.black54),),
-                  subtitle: Text('Mira nuestros tratamientos.'),
-                ),
-                Divider(),
-                ListTile(
-                  leading: SizedBox(
-                      height: 200.0,
-                      width: 90.0, // fixed width and height
-                      child: Image.asset(
-                        "assets/images/dinero1.jpg",
-                        fit: BoxFit.cover,
-                      )),
-                  title: Text('Gana Dinero con nosotros',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.8,
-                      color: Colors.black54),),
-                  subtitle: Text(
-                      'Tenemos un programa de recompensa por recomendaciones.'),
-                ),
+                OptionCard(
+                    title: 'Consultorio',
+                    description: 'Fotos del consultorio y salas',
+                    image: 'about.jpg'),
+                OptionCard(
+                    title: 'Pide Una Cita',
+                    description: 'Contacta con nuestra atencion al cliente',
+                    image: 'cita.png'),
+                OptionCard(
+                    title: 'Nuestra Misio y Vision',
+                    description: 'Informacion de institucional del Consultorio',
+                    image: 'mision.png'),
+                OptionCard(
+                    title: 'Staft de Doctores',
+                    description: 'Conoce nuestro staft de doctores, que te atenderemos.',
+                    image: 'medica1.png'),
+                OptionCard(
+                    title: 'Tratamientos',
+                    description: 'Mira nuestros tratamientos.',
+                    image: 'tratamientos2.png'),
+                OptionCard(
+                    title: 'Gana Dinero con nosotros',
+                    description: 'Tenemos un programa de recompensa por recomendaciones.',
+                    image: 'dinero1.jpg'),
               ],
             ),
           )
