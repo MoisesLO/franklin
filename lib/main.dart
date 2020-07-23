@@ -88,10 +88,13 @@ class MyHomePage extends StatelessWidget {
                         "assets/images/mision.png",
                         fit: BoxFit.fitWidth,
                       )),
-                  title: Text('Nuestra Misio y Vision',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.8,
-                      color: Colors.black54),),
+                  title: Text(
+                    'Nuestra Misio y Vision',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.8,
+                        color: Colors.black54),
+                  ),
                   subtitle:
                       Text('Informacion de institucional del Consultorio'),
                 ),
@@ -104,10 +107,13 @@ class MyHomePage extends StatelessWidget {
                         "assets/images/medical.png",
                         fit: BoxFit.fitWidth,
                       )),
-                  title: Text('Staft de Doctores',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.8,
-                      color: Colors.black54),),
+                  title: Text(
+                    'Staft de Doctores',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.8,
+                        color: Colors.black54),
+                  ),
                   subtitle: Text(
                       'Conoce nuestro staft de doctores, que te atenderemos.'),
                 ),
@@ -120,10 +126,13 @@ class MyHomePage extends StatelessWidget {
                         "assets/images/tratamientos2.png",
                         fit: BoxFit.fitWidth,
                       )),
-                  title: Text('Tratamientos',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.8,
-                      color: Colors.black54),),
+                  title: Text(
+                    'Tratamientos',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.8,
+                        color: Colors.black54),
+                  ),
                   subtitle: Text('Mira nuestros tratamientos.'),
                 ),
                 Divider(),
@@ -135,10 +144,13 @@ class MyHomePage extends StatelessWidget {
                         "assets/images/dinero1.jpg",
                         fit: BoxFit.cover,
                       )),
-                  title: Text('Gana Dinero con nosotros',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.8,
-                      color: Colors.black54),),
+                  title: Text(
+                    'Gana Dinero con nosotros',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16.8,
+                        color: Colors.black54),
+                  ),
                   subtitle: Text(
                       'Tenemos un programa de recompensa por recomendaciones.'),
                 ),
