@@ -1,6 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:franklin/OptionsCard.dart';
+import 'package:franklin/pages/consultorio.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:franklin/pages/consultorio.dart';
+import 'package:franklin/pages/cita.dart';
+import 'package:franklin/pages/mision.dart';
+import 'package:franklin/pages/staff.dart';
+import 'package:franklin/pages/tratamientos.dart';
+import 'package:franklin/pages/dinero.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,6 +17,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/consultorio': (context) => Consultorio(),
+        '/cita': (context) => Cita(),
+        '/mision': (context) => Mision(),
+        '/staff': (context) => Staff(),
+        '/tratamientos': (context) => Tratamientos(),
+        '/dinero': (context) => Dinero(),
+      },
       debugShowCheckedModeBanner: false,
       title: 'Consultorio Dental',
       home: MyHomePage(),
@@ -16,9 +33,30 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  Future<void> _launched;
+  String _phone = '';
+  Future<void> _launchInBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        headers: <String, String>{'my_header_key': 'my_header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    const String toLaunch = 'https://api.whatsapp.com/send?phone=51948472767&text=Hola%20quisiera%20hacer%20una%20consulta&source=&data=&app_absent=';
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
@@ -44,44 +82,62 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ),
                 OptionCard(
-                    title: 'Consultorio',
-                    description: 'Fotos del consultorio y salas',
-                    image: 'about.jpg'),
+                  title: 'Consultorio',
+                  description: 'Fotos del consultorio y salas',
+                  image: 'consultorio.jpg',
+                  url: '/consultorio',
+                ),
                 OptionCard(
-                    title: 'Pide Una Cita',
-                    description: 'Contacta con nuestra atencion al cliente',
-                    image: 'cita.png'),
+                  title: 'Pide Una Cita',
+                  description: 'Contacta con nuestra atencion al cliente',
+                  image: 'cita.png',
+                  url: '/cita',
+                ),
                 OptionCard(
-                    title: 'Nuestra Misio y Vision',
-                    description: 'Informacion de institucional del Consultorio',
-                    image: 'mision.png'),
+                  title: 'Nuestra Misio y Vision',
+                  description: 'Informacion de institucional del Consultorio',
+                  image: 'mision.png',
+                  url: '/mision',
+                ),
                 OptionCard(
-                    title: 'Staft de Doctores',
-                    description: 'Conoce nuestro staft de doctores, que te atenderemos.',
-                    image: 'medica1.png'),
+                  title: 'Staft de Doctores',
+                  description:
+                  'Conoce nuestro staft de doctores, que te atenderemos.',
+                  image: 'medica1.png',
+                  url: '/staff',
+                ),
                 OptionCard(
-                    title: 'Tratamientos',
-                    description: 'Mira nuestros tratamientos.',
-                    image: 'tratamientos2.png'),
+                  title: 'Tratamientos',
+                  description: 'Mira nuestros tratamientos.',
+                  image: 'tratamientos.jpg',
+                  url: '/tratamientos',
+                ),
                 OptionCard(
-                    title: 'Gana Dinero con nosotros',
-                    description: 'Tenemos un programa de recompensa por recomendaciones.',
-                    image: 'dinero1.jpg'),
+                  title: 'Gana Dinero con nosotros',
+                  description:
+                  'Tenemos un programa de recompensa por recomendaciones.',
+                  image: 'dinero1.jpg',
+                  url: '/dinero',
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
+        onPressed: () => setState(() {
+          _launched = _launchInBrowser(toLaunch);
+        }),
         child: Icon(Icons.add_comment),
         backgroundColor: Colors.indigo,
       ),
     );
   }
 }
+
+
+
+
 
 //class MyHomePage extends StatefulWidget {
 //  @override
