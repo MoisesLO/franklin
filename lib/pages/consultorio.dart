@@ -35,17 +35,62 @@ class Consultorio extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.40,
-                        height: MediaQuery.of(context).size.height * 0.40,
-                        color: Colors.blueAccent[400],
+                        child: FlatButton(
+                          padding: EdgeInsets.all(0.0),
+                            onPressed: null,
+                            child: Image.asset(
+                              "assets/images/consultorio1.jpg",
+                            )),
+                        width: (MediaQuery.of(context).size.width / 2) - 20,
+                        padding: EdgeInsets.only(right: 10),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.40,
-                        height: MediaQuery.of(context).size.height * 0.40,
-                        color: Colors.red,
-                      )
+                        child: FlatButton(
+                            padding: EdgeInsets.all(0.0),
+                            onPressed: null,
+                            child: Image.asset(
+                              "assets/images/consultorio1.jpg",
+                            )),
+                        width: (MediaQuery.of(context).size.width / 2) - 20,
+                      ),
                     ],
-                  )
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Image.asset(
+                            "assets/images/consultorio.jpg",
+                            width: (MediaQuery.of(context).size.width / 2) - 20,
+                          ),
+                        ),
+                        Image.asset(
+                          "assets/images/consultorio.jpg",
+                          width: (MediaQuery.of(context).size.width / 2) - 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Image.asset(
+                            "assets/images/consultorio.jpg",
+                            width: (MediaQuery.of(context).size.width / 2) - 20,
+                          ),
+                        ),
+                        Image.asset(
+                          "assets/images/consultorio.jpg",
+                          width: (MediaQuery.of(context).size.width / 2) - 20,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             )),
