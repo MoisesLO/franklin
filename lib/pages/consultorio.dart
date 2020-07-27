@@ -46,7 +46,6 @@ class Consultorio extends StatelessWidget {
                               child: Image.asset(
                                 "assets/images/consultorio1.jpg",
                               )),                          
-                          
                         ),
                         Container(
                           width: (MediaQuery.of(context).size.width / 2),
@@ -54,14 +53,48 @@ class Consultorio extends StatelessWidget {
                           child: FlatButton(
                               padding: EdgeInsets.all(0.0),
                               onPressed: (){
+                                Navigator.pushNamed(context, '/photo', arguments: 'consultorio2.jpg');
+                              },
+                              child: Image.asset(
+                                "assets/images/consultorio.jpg",
+                              )),                          
+                          
+                        ),                        
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[                        
+                        Container(
+                          width: (MediaQuery.of(context).size.width / 2),
+                          padding: EdgeInsets.only(left: 10, right: 10, top: 20),
+                          child: FlatButton(
+                              padding: EdgeInsets.all(0.0),
+                              onPressed: (){
+                                Navigator.pushNamed(context, '/photo', arguments: 'consultorio1.jpg');
                               },
                               child: Image.asset(
                                 "assets/images/consultorio1.jpg",
                               )),                          
-                          
                         ),
-                        
+                        Container(
+                          width: (MediaQuery.of(context).size.width / 2),
+                          padding: EdgeInsets.only(left: 10, right: 10, top: 20),
+                          child: FlatButton(
+                              padding: EdgeInsets.all(0.0),
+                              onPressed: (){
+                                Navigator.pushNamed(context, '/photo', arguments: 'consultorio2.jpg');
+                              },
+                              child: Image.asset(
+                                "assets/images/consultorio.jpg",
+                              )),                          
+                        ),                        
                       ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15, left: 15),
+                      child: Text(
+                          'Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and.',
+                          style: TextStyle(fontSize: 17, height: 1.3)),
                     ),
               ],
             )),

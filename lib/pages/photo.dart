@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pinch_zoom_image/pinch_zoom_image.dart';
 
 class Photo extends StatelessWidget {
   final String urlImage;
@@ -8,32 +7,22 @@ class Photo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Regresar'),
-      ),
-      body:
-      Container(
-        height: MediaQuery.of(context).size.height,
-        child: Center(
-          child: PinchZoomImage(
-            image: Image.asset("assets/images/"+urlImage, fit: BoxFit.cover,),
-            hideStatusBarWhileZooming: true,
-          ),
+        appBar: AppBar(
+          title: Text('Regresar'),
         ),
-      )
-    );
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          child: Center(
+              child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/" + urlImage),
+                  fit: BoxFit.fitWidth),
+            ),
+          )),
+        ));
   }
 }
-
-
-//Container(
-//decoration: BoxDecoration(
-//image: DecorationImage(
-//image: AssetImage("assets/images/"+urlImage),
-//fit: BoxFit.fitWidth
-//) ,
-//),
-//)
 
 //SliverAppBar(
 //pinned: true,

@@ -94,13 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   description: 'Contacta con nuestra atencion al cliente',
                   image: 'cita.png',
                   url: '/cita',
-                ),
-                OptionCard(
-                  title: 'Nuestra Misio y Vision',
-                  description: 'Informacion de institucional del Consultorio',
-                  image: 'mision.png',
-                  url: '/mision',
-                ),
+                ),                
                 OptionCard(
                   title: 'Staft de Doctores',
                   description:
