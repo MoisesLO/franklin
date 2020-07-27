@@ -17,7 +17,6 @@ class SecondScreen extends StatelessWidget {
               icon: Icon(Icons.arrow_back),
               onPressed: () => Navigator.of(context).pop(),
             ),
-
           ),
         ],
       ),

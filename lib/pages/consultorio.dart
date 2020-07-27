@@ -20,79 +20,50 @@ class Consultorio extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Scrollbar(
-                child: Padding(
-              padding: const EdgeInsets.only(top: 15, left: 12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('Consultorio Dental', style: TextStyle(fontSize: 20)),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: Text(
-                        'Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and.',
-                        style: TextStyle(fontSize: 17, height: 1.3)),
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Container(
-                        child: FlatButton(
-                          padding: EdgeInsets.all(0.0),
-                            onPressed: null,
-                            child: Image.asset(
-                              "assets/images/consultorio1.jpg",
-                            )),
-                        width: (MediaQuery.of(context).size.width / 2) - 20,
-                        padding: EdgeInsets.only(right: 10),
-                      ),
-                      Container(
-                        child: FlatButton(
-                            padding: EdgeInsets.all(0.0),
-                            onPressed: null,
-                            child: Image.asset(
-                              "assets/images/consultorio1.jpg",
-                            )),
-                        width: (MediaQuery.of(context).size.width / 2) - 20,
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: Image.asset(
-                            "assets/images/consultorio.jpg",
-                            width: (MediaQuery.of(context).size.width / 2) - 20,
-                          ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15, top: 15),
+                      child: Text('Consultorio Dental', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15, left: 15),
+                      child: Text(
+                          'Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and.',
+                          style: TextStyle(fontSize: 17, height: 1.3)),
+                    ),
+                    Row(
+                      children: <Widget>[                        
+                        Container(
+                          width: (MediaQuery.of(context).size.width / 2),
+                          padding: EdgeInsets.only(left: 10, right: 10, top: 20),
+                          child: FlatButton(
+                              padding: EdgeInsets.all(0.0),
+                              onPressed: (){
+                                Navigator.pushNamed(context, '/photo', arguments: 'consultorio1.jpg');
+                              },
+                              child: Image.asset(
+                                "assets/images/consultorio1.jpg",
+                              )),                          
+                          
                         ),
-                        Image.asset(
-                          "assets/images/consultorio.jpg",
-                          width: (MediaQuery.of(context).size.width / 2) - 20,
+                        Container(
+                          width: (MediaQuery.of(context).size.width / 2),
+                          padding: EdgeInsets.only(left: 10, right: 10, top: 20),
+                          child: FlatButton(
+                              padding: EdgeInsets.all(0.0),
+                              onPressed: (){
+                              },
+                              child: Image.asset(
+                                "assets/images/consultorio1.jpg",
+                              )),                          
+                          
                         ),
+                        
                       ],
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: Image.asset(
-                            "assets/images/consultorio.jpg",
-                            width: (MediaQuery.of(context).size.width / 2) - 20,
-                          ),
-                        ),
-                        Image.asset(
-                          "assets/images/consultorio.jpg",
-                          width: (MediaQuery.of(context).size.width / 2) - 20,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+              ],
             )),
           )
         ],

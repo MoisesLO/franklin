@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:franklin/OptionsCard.dart';
+import 'package:franklin/pages/photo.dart';
 import 'package:franklin/pages/consultorio.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:franklin/pages/consultorio.dart';
 import 'package:franklin/pages/cita.dart';
 import 'package:franklin/pages/mision.dart';
 import 'package:franklin/pages/staff.dart';
 import 'package:franklin/pages/tratamientos.dart';
 import 'package:franklin/pages/dinero.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
+        '/photo': (context) => Photo(ModalRoute.of(context).settings.arguments),
         '/consultorio': (context) => Consultorio(),
         '/cita': (context) => Cita(),
         '/mision': (context) => Mision(),
