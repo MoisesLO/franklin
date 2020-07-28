@@ -8,9 +8,9 @@ class Cita extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             pinned: true,
-            expandedHeight: 170,
+            expandedHeight: 220,
             flexibleSpace: Image.asset(
-              "assets/images/cita.jpg",
+              "assets/images/cita1.jpg",
               fit: BoxFit.cover,
             ),
             leading: IconButton(
@@ -38,7 +38,6 @@ class Cita extends StatelessWidget {
                     style: TextStyle(fontSize: 17, height: 1.3),
                   ),
                 ),
-                
               ],
             ),
           )
